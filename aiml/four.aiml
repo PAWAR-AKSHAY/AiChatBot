@@ -1,0 +1,32 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+	<category>
+      <pattern>I WANT A REFUND</pattern>
+      <template>
+	  For tickets bought online or over the phone, you may be eligible to apply for a refund using Manage My Booking after logging in.
+	  For tickets bought through Travel Agent, Please contact your travel agent directly to arrange your booking refund.</template>
+   </category>
+
+   	<category>
+        <pattern>WHO DO I CONTACT TO ARRANGE A TICKET REFUND</pattern>
+        <template>
+            <srai>I WANT A REFUND</srai>
+        </template>
+    </category>
+
+   <category>
+      <pattern>_ REFUND *</pattern>
+      <template>
+	  <srai> I WANT A REFUND </srai>
+	  </template>
+   </category>
+
+	<category>
+        <pattern> _ REFUND</pattern>
+        <template>
+            <srai> I WANT A REFUND </srai>
+        </template>
+    </category>
+
+
+</aiml>

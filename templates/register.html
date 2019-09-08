@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AiBot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .login-window{
+                margin : 4% 0 1% 0;
+        }
+        body{
+            background-color:lightblue;
+        }
+    </style>
+    <script type="text/javascript">
+        var check = function() {
+        if (document.getElementById('exampleInputPassword1').value ==
+        document.getElementById('exampleInputPassword2').value) {
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'Matching';
+        } else {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'Not Matching';
+        }
+        }
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('index')}}">AiBot</a>
+    <form class="form-inline">
+
+
+    </form>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm login-window">
+
+            <div class="card" style="width: 25rem;">
+                <p><h2><center>Register</center></h2></p>
+                <div class="card-body">
+                   <form action="{{url_for('register_user')}}" method="post">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" placeholder="First name" required autofocus name="fname">
+                    <!--<input type="text" name="fn" />-->
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last name" required name="lname">
+                    <!--<input type="text" name="ln" />-->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <!--<input type="text" name="em" />-->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="pwd" onkeyup='check();' required>
+                    <!--<input type="password" name="pa" />-->
+                </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword2">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password"  name="pwd1" onkeyup='check();' required>
+                      <span id='message'></span>
+                    <!--<input type="password" name="pa" />-->
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                </div>
+            </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+ <!--Successfully Registerd -->
+<!--<div class="modal" tabindex="-1" role="dialog"  id="exampleModal" >-->
+  <!--<div class="modal-dialog" role="document">-->
+    <!--<div class="modal-content">-->
+      <!--<div class="modal-header">-->
+
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+          <!--<span aria-hidden="true">&times;</span>-->
+        <!--</button>-->
+      <!--</div>-->
+      <!--<div class="modal-body">-->
+        <!--<p>SuccessFully Registered</p>-->
+      <!--</div>-->
+      <!--<div class="modal-footer">-->
+          <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</html>

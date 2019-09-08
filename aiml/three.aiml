@@ -1,0 +1,95 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+	<category>
+        <pattern>TAKING PETS</pattern>
+        <template>
+           Unfortunately we can't allow any pets, regardless of their size, to travel in the passenger cabin of our aircraft.
+        </template>
+    </category>
+
+	<category>
+        <pattern> PETS *</pattern>
+        <template>
+            <srai> TAKING PETS </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ PETS *</pattern>
+        <template>
+            <srai> TAKING PETS </srai>
+        </template>
+    </category>
+
+
+	<!--xxxxxxxxxxxx-->
+
+	<category>
+        <pattern>SEAT SELECTION</pattern>
+        <template>
+           Yes, you can reserve a seat. Regardless of whether it is a window or aisle seat or a seat with more legroom: Our airline offers you the opportunity of reserving seats for yourself and your travelling companions in advance or of selecting them at check-in.
+        </template>
+    </category>
+
+	<category>
+        <pattern>CAN I MAKE A SEAT RESERVATION</pattern>
+        <template>
+            <srai> SEAT SELECTION </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ SEAT RESERVATION *</pattern>
+        <template>
+            <srai> SEAT SELECTION </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ RESERVE *</pattern>
+        <template>
+            <srai> SEAT SELECTION </srai>
+        </template>
+    </category>
+
+
+	<category>
+        <pattern>SEAT SELECTION COST</pattern>
+        <template>
+           NO,seat cannot be selected free of cost during reservation. But it is free during CHECK IN.
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ SEAT RESERVATION *</pattern>
+        <template>
+            <srai> SEAT SELECTION COST </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>WHAT IS THE COST FOR SEAT RESERVATION</pattern>
+        <template>
+            <srai> SEAT SELECTION COST </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ SEAT SELECTION *</pattern>
+        <template>
+            <srai> SEAT SELECTION COST </srai>
+        </template>
+    </category>
+
+
+
+
+
+
+	<category>
+		<pattern>*</pattern>
+			<template>
+				Didn't quite get that!
+			</template>
+	</category>
+</aiml>

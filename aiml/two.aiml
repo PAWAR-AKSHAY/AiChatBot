@@ -1,0 +1,238 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+	<category>
+        <pattern>MAXIMUM NUMBER OF BOOKINGS</pattern>
+        <template>
+            In one online transaction, you can book up to nine (9) passengers, including adults and children in your traveling party.
+			The figure could vary in Business and First class depending on the configuration of the aircraft.
+        </template>
+    </category>
+
+	<category>
+        <pattern>HOW MANY NUMNER OF PASSENGERS CAN I BOOK A RESERVATION FOR AT A TIME</pattern>
+        <template>
+            <srai>MAXIMUM NUMBER OF BOOKINGS</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ RESERVATION *</pattern>
+        <template>
+            <srai>MAXIMUM NUMBER OF BOOKINGS</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ BOOKING *</pattern>
+        <template>
+            <srai>MAXIMUM NUMBER OF BOOKINGS</srai>
+        </template>
+    </category>
+
+
+
+
+	<!--xxxxxxxxxxxx-->
+
+	<category>
+        <pattern>PAY LATER</pattern>
+        <template>
+            Currently we do not offer this service online. The full payment has to be made at the time of booking.
+        </template>
+    </category>
+
+	<category>
+        <pattern>CAN I BOOK MY TICKET ONLINE AND PAY LATER</pattern>
+        <template>
+            <srai>PAY LATER</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ PAY LATER *</pattern>
+        <template>
+            <srai>PAY LATER</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern> PAY LATER *</pattern>
+        <template>
+            <srai> PAY LATER </srai>
+        </template>
+    </category>
+
+
+	<!--xxxxxxxxxxxx-->
+
+	<category>
+        <pattern>MODES OF PAYMENT</pattern>
+        <template>
+            You can use a credit card and a debit card issued by Master/ Visa / Amex,or by net banking.
+			Rupay cards are currently accepted for travel within India only. Details of the banks for debit cards and net banking are mentioned in our Terms and Conditions.
+			If your payment is successful you will receive an Itinerary receipt by email.
+        </template>
+    </category>
+
+	<category>
+        <pattern> WHAT ARE DIFFERENT PAYMENT METHODS</pattern>
+        <template>
+            <srai>MODES OF PAYMENT</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ MODES OF PAYMENT *</pattern>
+        <template>
+            <srai>MODES OF PAYMENT</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ PAYMENT *</pattern>
+        <template>
+            <srai>MODES OF PAYMENT</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ PAY *</pattern>
+        <template>
+            <srai>MODES OF PAYMENT</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern> PAY *</pattern>
+        <template>
+            <srai>MODES OF PAYMENT</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ ACCEPTED *</pattern>
+        <template>
+            <srai>MODES OF PAYMENT</srai>
+        </template>
+    </category>
+
+    <!--xxxxxxxxxxxx-->
+
+	<category>
+        <pattern>GET TICKETS</pattern>
+        <template>
+          After you complete your online purchase, the system will generate your itinerary receipt vide email and display the key information of about your reservation on the screen.
+		  You will need to print the receipt sent by email and produce it at the airport along with your valid photo identification for check-in.
+		  Please carry this printed receipt to gain access to the airport and to check-in.
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ DELIVERY *</pattern>
+        <template>
+            <srai>GET TICKETS</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ DELIVERED *</pattern>
+        <template>
+            <srai>GET TICKETS</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern> _ DELIVERED</pattern>
+        <template>
+            <srai> GET TICKETS </srai>
+        </template>
+    </category>
+
+
+
+	<!--xxxxxxxxxxxx-->
+
+	<category>
+        <pattern>NO CONFIRMATION OF TICKETS</pattern>
+        <template>
+          You should have received a copy of the receipt at the email address you entered during the booking process.
+		  Please check that the email has not gone into your Junk Mail folder.
+		  You are required to print and carry this receipt to gain access to the airport and to check-in.
+        </template>
+    </category>
+
+	<category>
+        <pattern>I HAVE NOT RECEIVED CONFIRMATION MESSAGE</pattern>
+        <template>
+            <srai>NO CONFIRMATION OF TICKETS</srai>
+        </template>
+    </category>
+
+	<!--xxxxxxxxxxxx-->
+
+	<category>
+        <pattern>CANCEL</pattern>
+        <template>
+          Yes you can cancel your tickets.Once you make your reservation online you can make use of the "My Booking" section to  cancel and/or rebook your reservation for only fully unutilized tickets.
+        </template>
+    </category>
+
+	<category>
+        <pattern>REBOOK</pattern>
+        <template>
+           Yes you can rebook your tickets.Once you make your reservation online you can make use of the "My Booking" section to modify  your reservation for only fully unutilized tickets.
+        </template>
+    </category>
+
+	<category>
+        <pattern> _ CANCEL</pattern>
+        <template>
+            <srai> CANCEL </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern> CANCEL *</pattern>
+        <template>
+            <srai> CANCEL </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ CANCEL *</pattern>
+        <template>
+            <srai>CANCEL</srai>
+        </template>
+    </category>
+
+
+
+	<category>
+        <pattern> _ REBOOK</pattern>
+        <template>
+            <srai> REBOOK </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern> REBOOK *</pattern>
+        <template>
+            <srai> REBOOK </srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ REBOOK *</pattern>
+        <template>
+            <srai>REBOOK</srai>
+        </template>
+    </category>
+
+
+	<category>
+        <pattern>*</pattern>
+        <template>
+            Didn't quite get that!
+        </template>
+    </category>
+</aiml>

@@ -1,0 +1,77 @@
+ <aiml version="1.0.1" encoding="UTF-8">
+
+	<category>
+      <pattern>WHAT IS YOUR NAME</pattern>
+      <template> My name is ALICE.</template>
+   </category>
+
+   <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            Hello <set name="uname"><star/></set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS MY NAME</pattern>
+        <template>
+            Your name is <get name="uname"/>
+        </template>
+    </category>
+
+	<category>
+        <pattern>* AND * ARE MY FRIENDS </pattern>
+        <template>
+			Good to know that <star index="1"/>  and <star index="2"/> are  your friends!!
+			<!--Also my Name is <get name="uname"/>-->
+        </template>
+    </category>
+
+	    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Well, hello!
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ARE YOU</pattern>
+        <template>
+            I'm a bot, silly!
+        </template>
+    </category>
+
+    <category>
+        <pattern>HOW WAS YOUR DAY</pattern>
+        <template>
+            Not that great!
+        </template>
+    </category>
+
+    <category>
+        <pattern>GOOD MORNING</pattern>
+        <template>
+            GOOD MORNING HUMAN
+        </template>
+    </category>
+
+    <category>
+        <pattern>BYE</pattern>
+        <template>
+            Sad to see you go! BYE!
+        </template>
+    </category>
+
+	 <category>
+        <pattern>WHAT ARE YOU DOING RIGHT NOW</pattern>
+        <template>
+            <random>
+				<!--<li> Chatting with donkeys like you!!</li>-->
+				<li> Nothing, BORED TO DEATH</li>
+				<li> SLEEPING!!</li>
+				<li> I am under maintenance now.</li>
+				<li> I am busy rght now. </li>
+			</random>
+        </template>
+    </category>
+</aiml>

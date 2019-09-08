@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AiBot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        .login-window{
+                margin : 8% 0 1% 0;
+        }
+        .a{
+         margin: 0 2% 0 2%;
+        }
+		.jumbotron{
+		<!--text-align:center;-->
+		}
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" >
+ <a class="navbar-brand" href="{{ url_for('index')}}">AiBot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+    <div class="navbar-nav justify-content-end">
+
+<a href="{{ url_for('admin')}}"> <i class="fas fa-user-shield"></i>Admin </a>
+          &nbsp&nbsp&nbsp
+        <a href="{{ url_for('signup')}}"> <i class="fas fa-user-plus"></i>Signup </a>
+          &nbsp&nbsp&nbsp
+          <a href="{{ url_for('login')}}"> <i class="fas fa-sign-in-alt"></i> Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+    <!--<a class="navbar-brand" href="{{ url_for('index')}}">AiBot</a>-->
+   <!--<div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">-->
+    <!--<div class="navbar-nav justify-content-end">-->
+      <!--<ul class = "nav navbar-nav">-->
+      	<!--<li class="divider">-->
+             <!--<a href="{{ url_for('admin')}}"> <i class="fas fa-user-shield"></i>Admin </a>-->
+        <!--</li>-->
+          <!--&nbsp&nbsp&nbsp-->
+        <!--<li class="divider">-->
+        <!--<a href="{{ url_for('signup')}}"> <i class="fas fa-user-plus"></i>Signup </a>-->
+      <!--</li>-->
+        <!--&nbsp&nbsp&nbsp-->
+        <!--<li class="divider">-->
+          <!--<a href="{{ url_for('login')}}"> <i class="fas fa-sign-in-alt"></i> Login</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+
+
+<!--Jumbotron-->
+<div class="jumbotron">
+  <h1 class="display-4">AI ChatBot</h1>
+  <h3><p class="text-info">AiBot chats and can answer some of your questions</p></h3>
+  <hr class="my-4">
+  <p></p>
+  <p class="lead">
+    <!--<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
+  <!--Collapse Button-->
+  <button class="btn btn-info btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    More...
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <h4><p class="text-info">AiBot is an AIML chatbot which is an offshoot of Dr. Richard Wallace's ALICE artificial
+intelligence program. AiBot is designed to be more "human" than ALICE. His database
+contains no information about being a chatbot. AiBot "thinks" he is a 20 year old college
+student living in India. For best results when talking to AiBot, use correct spelling
+    and grammar, enter only one sentence at a time, and don't use a lot of internet slang.</p></h4>
+
+
+  </div>
+</div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AiBot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+        <!-- font-size: 28 px; /* Increased text to enable scrolling */
+        --> padding: 0px 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        #chat-button {
+            position: fixed;
+            bottom: 48px;
+            right: 48px;
+        }
+
+        .modal-content {
+
+            position: fixed;
+            bottom: 90px;
+            right: 60px;
+            width: 369px;
+        }
+
+        .modal-body{
+            height: 250px;
+            overflow-y: auto;
+        }
+
+
+
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <script>
+        function fileload() {
+            var result = document.getElementById("txtf").value;
+            alert(result);
+        }
+
+
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" >
+    <a class="navbar-brand" href="#">AiBot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+    <div class="navbar-nav justify-content-end">
+            <a href="{{ url_for('login')}}"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+
+
+    </div>
+  </div>
+</nav>
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+    <!--<a class="navbar-brand" href="#">AiBot</a>-->
+    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
+            <!--aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--<span class="navbar-toggler-icon"></span>-->
+    <!--</button>-->
+    <!--<div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">-->
+        <!--<div class="navbar-nav justify-content-end">-->
+            <!--<a href="{{ url_for('login')}}"> <i class="fas fa-sign-out-alt"></i> Logout</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+<!--side bar logic-->
+<div class="sidenav" style="z-index:-2;margin-top:40px;">
+</div>
+
+<div class="main" style="padding:20px;">
+    <h2>Dashboard</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-header">Questions Asked Now</div>
+  <div class="card-body">
+    <!--<h5 class="card-title">Info card title</h5>-->
+      <h5> <p class="card-text">Total Questions: <span id="total_question">0</span></p></h5>
+  </div>
+</div>
+            </div>
+            <div class="col-sm">
+                 <div class="card text-white bg-info mb-3" style="width: 18rem;">
+                        <div class="card-header">Total Number of Questions Asked</div>
+                    <div class="card-body">
+
+                        <h5><p class="card-text"> {{dbque_cnt}} </p></h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button type="button" class="btn btn-raised btn-warning" id="chat-button" data-toggle="modal"
+            data-target="#exampleModal">Chat
+    </button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document"  style="overflow-y: scroll;">
+         <div class="modal-content  border border-info rounded ">
+            <div class="modal-header p-3 mb-2 bg-info text-white" >
+
+                <h5 class="modal-title" id="exampleModalLabel">ChatBox</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="chat-reply">
+                         <div>
+                      <b><center><script>
+                        var d = new Date();
+                        var date= d.getDate();
+                        var month = new Array();
+                        month[0] = "January";
+                        month[1] = "February";
+                        month[2] = "March";
+                        month[3] = "April";
+                        month[4] = "May";
+                        month[5] = "June";
+                        month[6] = "July";
+                        month[7] = "August";
+                        month[8] = "September";
+                        month[9] = "October";
+                        month[10] = "November";
+                        month[11] = "December";
+                        var n = month[d.getMonth()];
+                        var year = d.getFullYear();
+                        document.write(date +" "+n +" "+year);
+                </script></center></b>
+
+
+                </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="chat-input">
+                    <span class="input-group-btn">
+                    <!--<button class="btn btn-default" type="button" onclick="loadDoc()">Ok!</button>-->
+                                                <button type="button" class="btn btn-info" onclick="loadDoc()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script>
+    var chat_box_reply = document.getElementById('chat-reply');
+    var nos_question = 0;
+
+    function loadDoc() {
+        nos_question++;
+        let chat_input_text = document.getElementById('chat-input').value;
+        <!--chat_box_reply.innerHTML += "<br>Me: " + chat_input_text;-->
+        chat_box_reply.innerHTML += '<div class="container"> <img src="https://iisy.fi/wp-content/uploads/2018/12/silhouette_man.jpg" alt="Avatar" style="width:100%;">' + chat_input_text +'</div><br>';
+        document.getElementById('chat-input').value = "";
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                var obj = JSON.parse(this.responseText);
+                <!--chat_box_reply.innerHTML += "<br>BOT: " + obj.answer;-->
+                                chat_box_reply.innerHTML += '<div class="container darker"><img src="https://cdn0.iconfinder.com/data/icons/different-characters/1200/Untitled-1-30-128.png" alt="Avatar" class="right" style="width:100%;">' + obj.answer + '</div>';
+                 var div = document.getElementById('chat-reply');
+                 div.scrollTop = div.scrollHeight - div.clientHeight;
+                 console.log(div.scrollTop);
+            }
+        };
+        xhttp.open("POST", "/ask", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        var tq = document.getElementById('total_question');
+        tq.innerText = nos_question;
+        xhttp.send("chatmessage=" + encodeURIComponent(chat_input_text) + '&totalquestion=' + encodeURIComponent(nos_question));
+
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,159 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<!--Baggage Category -->
+
+	<category>
+		<pattern>BAGGAGE</pattern>
+		<template>
+			Your checked baggage allowance is the total number of bags, their size and weight that go into the aircraft hold.
+			This varies depending on the cabin you're travelling in and your frequent flyer member status.
+		</template>
+	</category>
+
+
+	<category>
+        <pattern>HOW MUCH BAGGAGE CAN I CHECK IN</pattern>
+        <template>
+            <srai>BAGGAGE</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>HOW MANY BAGGAGE CAN I CARRY WITH ME</pattern>
+        <template>
+            <srai>BAGGAGE</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>HOW MANY BAGS CAN I CARRY WITH ME</pattern>
+        <template>
+            <srai>BAGGAGE</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>HOW MANY BAGS DO YOU ALLOW US TO CARRY</pattern>
+        <template>
+            <srai>BAGGAGE</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>BAGS</pattern>
+        <template>
+            <srai>BAGGAGE</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>HOW MANY BAGS CAN AN ADULT CARRY</pattern>
+        <template>
+            1 handbag/laptop bag (max. 23kg / 51lb and up to 40 x 30 x 15cm / 16 x 12 x 6in)plus
+
+			1 additional cabin bag (max. 23kg / 51lb and up to 56 x 45 x 25cm / 22 x 18 x 10in)
+        </template>
+    </category>
+
+	<category>
+        <pattern>HOW MANY BAGS CAN AN INFANT CARRY</pattern>
+        <template>
+            1 cabin bag for items required during the flight (max. 23kg / 51lb and up to 56 x 45 x 25cm / 22 x 18 x 10in)
+        </template>
+    </category>
+
+
+		<!--BANNED ITEMS CATEGORY-->
+
+
+	<category>
+		<pattern>BANNED ITEMS</pattern>
+		<template>
+			Lithuim ion/metal batteries.
+			FUEL CELLS
+			POWER BANKS
+			Javelins and pole vaults
+			Windsurfing boards and sails
+			E-cigarettes
+			Firearms and ammunation
+			laser pistols
+			bows, cross bows and arrows
+			harpoon guns and spear guns
+			slingshots and catapults
+			mines, grenades and other explosive military stores
+			dynamite, gunpowder and plastic explosives
+			petrol, solid fuel fire lighters, fuel blocks for camping stoves, cylinders containing flammable gas
+			lighter fuel, lighter refills, 'Strike anywhere' matches, 'Blue flame' or 'Cigar' lighters
+			Cigarette lighters and safety matches
+			acids, bleaches and peroxide
+			Sharp objects
+		</template>
+	</category>
+
+	<category>
+        <pattern>WHAT ITEM SHOULD I NOT CARRY WITH ME</pattern>
+        <template>
+            <srai>BANNED ITEMS</srai>
+        </template>
+    </category>
+
+
+	<category>
+        <pattern>_ RESTRICTED *</pattern>
+        <template>
+            <srai>BANNED ITEMS</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ PROHIBITED *</pattern>
+        <template>
+            <srai>BANNED ITEMS</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ NOT ALLOWED *</pattern>
+        <template>
+            <srai>BANNED ITEMS</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ BANNED *</pattern>
+        <template>
+            <srai>BANNED ITEMS</srai>
+        </template>
+    </category>
+
+
+	<!--OVER WEIGHT CATEGORY-->
+
+	<category>
+        <pattern>OVERWEIGHT BAGGAGE</pattern>
+        <template>
+            23-32kg (51-70lb):
+			65 GBP / 75 EUR / 100 USD / 100 CAD per overweight bag and one-way journey.
+
+			Over 32kg (70lb):
+			Not possible to check in!
+        </template>
+    </category>
+
+
+	<category>
+        <pattern>_ OVERWEIGHT *</pattern>
+        <template>
+            <srai>OVERWEIGHT BAGGAGE</srai>
+        </template>
+    </category>
+
+	<category>
+        <pattern>_ HEAVY *</pattern>
+        <template>
+            <srai>OVERWEIGHT BAGGAGE</srai>
+        </template>
+    </category>
+
+
+</aiml>

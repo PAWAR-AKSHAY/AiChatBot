@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+         <thead>
+            <td>Name</td>
+            <td>Lname></td>
+            <td>Total Questions</td>
+
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["fname"]}}</td>
+               <td>{{row["lname"]}}</td>
+               <td>{{row['que_cnt']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+
+   </body>
+</html>

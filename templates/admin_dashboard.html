@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<script src='static/Chart.min.js'></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <title>AiBot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  <!--font-size: 28px; /* Increased text to enable scrolling */-->
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#myChart{
+height:442px;
+width:885px;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">AiBot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+        <div class="navbar-nav justify-content-end">
+            <a href="{{ url_for('admin')}}"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+
+
+        </div>
+    </div>
+</nav>
+
+<div class="sidenav" style="z-index:-2;margin-top:40px;">
+</div>
+
+<div class="main" style="padding:20px;">
+    <h2>Dashboard</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">All Users Statistics</h5>
+                        <div>
+                            <!-- Large modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target=".bd-example-modal-lg">View
+                            </button>
+
+                            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+
+                                        <table class="table table-hover">
+                                            <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">First</th>
+                                                <th scope="col">Last</th>
+                                                <th scope="col">Total Questions Asked</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for row in rows %}
+                                            <tr>
+                                                <th scope="row">{{row["id"]}}</th>
+
+                                                <td>{{row["fname"]}}</td>
+                                                <td>{{row["lname"]}}</td>
+                                                <td>{{row['que_cnt']}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">All users Statistics</h5>
+                        <div>
+                            <!-- Large modal -->
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                View
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content" style="height:800px">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+     let myChart = document.getElementById('myChart').getContext('2d');
+        let barChart = new Chart(myChart, {
+            type: 'bar',
+            data: {
+                labels: [
+
+                    {% for row in rows %}
+                    "{{row["fname"]}}",
+                    {% endfor %}
+
+                ],
+                datasets: [
+                    {
+                        label: 'Questions',
+                        data: [
+
+                    {% for row in rows %}
+                    {{row['que_cnt']}},
+                    {% endfor %}
+
+
+                        ],
+                        backgroundColor: 'rgba(75, 192, 192,0.6)',
+                    },
+                 ]
+            },
+            options: {
+                layout: {
+                },
+                title: {
+                    display: true,
+                    text: 'Questions asked by user '
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

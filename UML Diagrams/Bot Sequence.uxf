@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.baselet.element.old.allinone.SequenceDiagram</type>
+    <coordinates>
+      <x>210</x>
+      <y>90</y>
+      <w>520</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>_Admin ~id1_|_User~id2_|_ChatBot~id3_|_Database~id4_
+id1-&gt;id4:id1,id4:Login
+id1-&gt;id4:id1,id4:View Stats
+id4./&gt;id1:id1,id4:Get Stats
+id1-&gt;id4:id1,id4:Logout
+
+id2-&gt;id4:id2,id4:Login / Register
+id2-&gt;id3:id2,id3,id4:Chat with Bot
+id3./&gt;id2:id2,id3,id4:Get Response
+id2-&gt;id4:id2,id4:View Stats
+id4./&gt;id2:id2,id4:Get Stats
+id2-&gt;id4:id2,id4:Logout
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>250</x>
+      <y>450</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>390</x>
+      <y>450</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>530</x>
+      <y>450</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>670</x>
+      <y>450</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
